@@ -1,14 +1,8 @@
 ---
 layout: post
 title: ROS, Robot Operating System
-category: Coding
-tags: ros c++
-year: 2013
-month: 03
-day: 17
-published: true
-summary: How to set up and use ROS, because I couldn't find a good guide. Also some of my take on it.
-image: post_two.png
+date: 2013-03-17 00:00:00 -0000
+categories: Coding
 ---
 
 ## Preface
