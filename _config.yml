@@ -1,6 +1,24 @@
 title: Doug Sherk's Blog
+author: Doug Sherk
 description: Notes on software engineering, ML, and systems work.
-theme: minima
 
-header_pages:
-  - about.md
+remote_theme: daattali/beautiful-jekyll
+
+navbar-links:
+  About: "about"
+
+social-network-links:
+  linkedin: dougsherk
+
+share-links-active:
+  twitter: false
+  facebook: false
+  linkedin: false
+  vk: false
+
+post_search: false
+feed_show_excerpt: true
+feed_show_tags: false
+excerpt_length: 30
+
+url-pretty: ""
