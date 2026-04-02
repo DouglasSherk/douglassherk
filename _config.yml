@@ -1,24 +1,53 @@
-title: Doug Sherk's Blog
-author: Doug Sherk
-description: Notes on software engineering, ML, and systems work.
+# basic site
+title: "Doug Sherk"
+name: "Doug Sherk"
+description: "Software engineering, machine learning, and systems notes."
+url: "https://sherk.me"
+baseurl: ""
 
-remote_theme: daattali/beautiful-jekyll
+repository: "douglassherk/douglassherk.github.io"
 
-navbar-links:
-  About: "about"
+# theme behavior
+breadcrumbs: false
+read_more: "disabled"
+talkmap_link: false
+comments:
+  provider: false
 
-social-network-links:
-  linkedin: dougsherk
+atom_feed:
+  hide: false
 
-share-links-active:
-  twitter: false
-  facebook: false
-  linkedin: false
-  vk: false
+analytics:
+  provider: false
 
-post_search: false
-feed_show_excerpt: true
-feed_show_tags: false
-excerpt_length: 30
+# author sidebar
+author:
+  avatar: # optional, e.g. "profile.png"
+  name: "Doug Sherk"
+  bio: "Machine learning engineer writing about software, ML systems, and engineering practice."
+  location:
+  employer:
+  uri:
+  email:
+  github: "douglassherk"
+  linkedin: "dougsherk"
 
-url-pretty: ""
+# output defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: false
+      related: false
+
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
