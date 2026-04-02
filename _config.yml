@@ -1,9 +1,6 @@
-theme: jekyll-theme-minimal
-title: Doug Sherk
-description: Notes on software engineering, machine learning, and systems.
-show_downloads: false
+title: Doug Sherk's Blog
+description: Notes on software engineering, ML, and systems work.
+theme: minima
 
-# Optional
-markdown: kramdown
-kramdown:
-  input: GFM
+header_pages:
+  - about.md
