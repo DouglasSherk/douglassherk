@@ -1,3 +1,9 @@
 theme: jekyll-theme-minimal
-title: Doug Sherk's Blog
-description: Bookmark this to keep an eye on my project updates!
+title: Doug Sherk
+description: Notes on software engineering, machine learning, and systems.
+show_downloads: false
+
+# Optional
+markdown: kramdown
+kramdown:
+  input: GFM
