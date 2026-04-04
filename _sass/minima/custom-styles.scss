@@ -1,11 +1,10 @@
-/* Overall page geometry */
+/* Keep the page wide, but not artificially offset */
 .wrapper {
-  max-width: 1440px;
-  padding-left: 32px;
-  padding-right: 32px;
+  max-width: 1280px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
-/* Typography */
 body {
   color: #222;
   font-size: 18px;
@@ -21,85 +20,71 @@ a:visited {
 .site-header {
   border-top: 0;
   border-bottom: 0;
-  padding-top: 18px;
+  padding-top: 12px;
 }
 
 .site-title,
 .site-title:visited {
   color: #333;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 300;
-  letter-spacing: 0;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .site-nav .page-link {
   color: #222;
   font-size: 18px;
-  font-weight: 400;
-  margin-left: 24px;
+  margin-left: 20px;
 }
 
-/* Main page spacing */
+/* Main spacing */
 .page-content {
-  padding-top: 72px;
-  padding-bottom: 120px;
+  padding-top: 56px;
+  padding-bottom: 96px;
 }
 
-/* Constrain homepage content into a centered-left column */
-.home {
-  max-width: 1080px;
-  margin-left: 280px;
-}
-
-/* Intro paragraph */
+/* Intro copy */
 .home > p:first-of-type {
   max-width: 980px;
-  margin-bottom: 110px;
+  margin-bottom: 84px;
   font-size: 18px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-/* Remove extra list heading noise if present */
+/* Remove extra heading clutter if present */
 .home .post-list-heading,
 .home .page-heading {
   display: none;
 }
 
-/* Post list layout */
+/* Post list */
 .post-list {
   margin: 0;
 }
 
 .post-list > li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  column-gap: 56px;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  column-gap: 40px;
   align-items: baseline;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
-/* Titles on left */
 .post-list > li h3 {
-  grid-column: 1;
-  grid-row: 1;
   margin: 0;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
-/* Dates on right */
 .post-list > li .post-meta {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: start;
-  white-space: nowrap;
+  justify-self: end;
   font-size: 18px;
   color: #666;
+  white-space: nowrap;
 }
 
-/* Make links look like text, not Minima-style blue headings */
 .post-link,
 .post-link:visited {
   color: #222;
@@ -107,13 +92,13 @@ a:visited {
 }
 
 .post-link:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 /* Footer cleanup */
 .site-footer {
   border-top: 0;
-  padding-top: 40px;
+  padding-top: 32px;
 }
 
 .footer-col-wrapper {
@@ -124,4 +109,36 @@ a:visited {
 .social-media-list,
 .feed-subscribe {
   display: none;
+}
+
+/* Responsive collapse */
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-title,
+  .site-title:visited {
+    font-size: 26px;
+  }
+
+  .home > p:first-of-type {
+    margin-bottom: 56px;
+  }
+
+  .post-list > li {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    margin-bottom: 24px;
+  }
+
+  .post-list > li .post-meta {
+    justify-self: start;
+    font-size: 16px;
+  }
+
+  .post-list > li h3 {
+    font-size: 19px;
+  }
 }
