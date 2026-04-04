@@ -1,64 +1,49 @@
-/* Keep the page wide, but not artificially offset */
+/* Slightly wider layout */
 .wrapper {
-  max-width: 1280px;
-  padding-left: 28px;
-  padding-right: 28px;
-}
-
-body {
-  color: #222;
-  font-size: 18px;
-  line-height: 1.55;
-}
-
-a,
-a:visited {
-  color: #222;
+  max-width: 1240px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 /* Header */
 .site-header {
   border-top: 0;
-  border-bottom: 0;
   padding-top: 12px;
 }
 
 .site-title,
 .site-title:visited {
-  color: #333;
   font-size: 30px;
   font-weight: 300;
-  line-height: 1.2;
   letter-spacing: 0;
+  color: #333;
 }
 
 .site-nav .page-link {
   color: #222;
   font-size: 18px;
-  margin-left: 20px;
+  margin-left: 24px;
 }
 
-/* Main spacing */
-.page-content {
-  padding-top: 56px;
-  padding-bottom: 96px;
-}
-
-/* Intro copy */
-.home > p:first-of-type {
-  max-width: 980px;
-  margin-bottom: 84px;
+/* Body copy */
+body {
+  color: #222;
   font-size: 18px;
   line-height: 1.6;
 }
 
-/* Remove extra heading clutter if present */
-.home .post-list-heading,
-.home .page-heading {
-  display: none;
+.page-content {
+  padding-top: 52px;
+  padding-bottom: 88px;
 }
 
-/* Post list */
+/* Intro paragraph only */
+.home > p:first-of-type {
+  max-width: 980px;
+  margin-bottom: 56px;
+}
+
+/* Post list: subtle two-column layout, not aggressive */
 .post-list {
   margin: 0;
 }
@@ -66,25 +51,30 @@ a:visited {
 .post-list > li {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 180px;
-  column-gap: 40px;
+  column-gap: 32px;
   align-items: baseline;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .post-list > li h3 {
+  grid-column: 1;
+  grid-row: 1;
   margin: 0;
   font-size: 21px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
 .post-list > li .post-meta {
+  grid-column: 2;
+  grid-row: 1;
   justify-self: end;
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
   white-space: nowrap;
 }
 
+/* Remove bright Minima link feel */
 .post-link,
 .post-link:visited {
   color: #222;
@@ -97,8 +87,7 @@ a:visited {
 
 /* Footer cleanup */
 .site-footer {
-  border-top: 0;
-  padding-top: 32px;
+  padding-top: 28px;
 }
 
 .footer-col-wrapper {
@@ -111,11 +100,11 @@ a:visited {
   display: none;
 }
 
-/* Responsive collapse */
-@media screen and (max-width: 900px) {
+/* Mobile: fall back cleanly */
+@media screen and (max-width: 700px) {
   .wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .site-title,
@@ -123,19 +112,15 @@ a:visited {
     font-size: 26px;
   }
 
-  .home > p:first-of-type {
-    margin-bottom: 56px;
-  }
-
   .post-list > li {
     grid-template-columns: 1fr;
-    row-gap: 6px;
-    margin-bottom: 24px;
+    row-gap: 4px;
   }
 
   .post-list > li .post-meta {
+    grid-column: 1;
     justify-self: start;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .post-list > li h3 {
