@@ -1,6 +1,6 @@
 title: Doug Sherk's Blog
 description: Notes on software engineering, ML, and systems work.
 
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: jekyll/minima
 plugins:
-  - jekyll-include-cache
+  - jekyll-remote-theme
