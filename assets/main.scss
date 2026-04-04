@@ -1,0 +1,103 @@
+/* Wider, airier layout */
+.wrapper {
+  max-width: 1280px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* Header: lighter and less boxed-in */
+.site-header {
+  border-top: 0;
+  border-bottom: 0;
+  padding-top: 18px;
+}
+
+.site-title,
+.site-title:visited {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 0;
+  color: #333;
+}
+
+.site-nav .page-link {
+  color: #222;
+  font-size: 24px;
+  margin-left: 28px;
+}
+
+/* Body copy feels closer to lethain.com */
+body {
+  color: #222;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.page-content {
+  padding-top: 56px;
+  padding-bottom: 96px;
+}
+
+/* Homepage intro spacing */
+.home > p,
+.home .page-heading,
+.home .post-list-heading {
+  margin-bottom: 48px;
+}
+
+/* Post list: title left, date right */
+.post-list {
+  margin: 0;
+}
+
+.post-list > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  column-gap: 40px;
+  align-items: baseline;
+  margin-bottom: 28px;
+}
+
+.post-list > li .post-meta {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  font-size: 18px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.post-list > li h3 {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.post-link,
+.post-link:visited {
+  color: #222;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer: cleaner and less "Minima" */
+.site-footer {
+  border-top: 0;
+  padding-top: 40px;
+}
+
+.footer-col-wrapper {
+  color: #666;
+  font-size: 18px;
+}
+
+.social-media-list,
+.feed-subscribe {
+  display: none;
+}
