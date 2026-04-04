@@ -1,11 +1,23 @@
-/* Wider, airier layout */
+/* Overall page geometry */
 .wrapper {
-  max-width: 1280px;
-  padding-left: 28px;
-  padding-right: 28px;
+  max-width: 1440px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
-/* Header: lighter and less boxed-in */
+/* Typography */
+body {
+  color: #222;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+a,
+a:visited {
+  color: #222;
+}
+
+/* Header */
 .site-header {
   border-top: 0;
   border-bottom: 0;
@@ -14,68 +26,80 @@
 
 .site-title,
 .site-title:visited {
-  font-size: 32px;
+  color: #333;
+  font-size: 28px;
   font-weight: 300;
   letter-spacing: 0;
-  color: #333;
+  line-height: 1.2;
 }
 
 .site-nav .page-link {
   color: #222;
-  font-size: 24px;
-  margin-left: 28px;
-}
-
-/* Body copy feels closer to lethain.com */
-body {
-  color: #222;
   font-size: 18px;
-  line-height: 1.6;
+  font-weight: 400;
+  margin-left: 24px;
 }
 
+/* Main page spacing */
 .page-content {
-  padding-top: 56px;
-  padding-bottom: 96px;
+  padding-top: 72px;
+  padding-bottom: 120px;
 }
 
-/* Homepage intro spacing */
-.home > p,
-.home .page-heading,
-.home .post-list-heading {
-  margin-bottom: 48px;
+/* Constrain homepage content into a centered-left column */
+.home {
+  max-width: 1080px;
+  margin-left: 280px;
 }
 
-/* Post list: title left, date right */
+/* Intro paragraph */
+.home > p:first-of-type {
+  max-width: 980px;
+  margin-bottom: 110px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+/* Remove extra list heading noise if present */
+.home .post-list-heading,
+.home .page-heading {
+  display: none;
+}
+
+/* Post list layout */
 .post-list {
   margin: 0;
 }
 
 .post-list > li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
-  column-gap: 40px;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  column-gap: 56px;
   align-items: baseline;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
-.post-list > li .post-meta {
-  grid-column: 2;
-  grid-row: 1;
-  justify-self: end;
-  font-size: 18px;
-  color: #666;
-  white-space: nowrap;
-}
-
+/* Titles on left */
 .post-list > li h3 {
   grid-column: 1;
   grid-row: 1;
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
+/* Dates on right */
+.post-list > li .post-meta {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: start;
+  white-space: nowrap;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Make links look like text, not Minima-style blue headings */
 .post-link,
 .post-link:visited {
   color: #222;
@@ -83,10 +107,10 @@ body {
 }
 
 .post-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-/* Footer: cleaner and less "Minima" */
+/* Footer cleanup */
 .site-footer {
   border-top: 0;
   padding-top: 40px;
