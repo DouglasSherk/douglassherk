@@ -1,0 +1,623 @@
+
+<!doctype html>
+<html
+  lang="en"
+  data-content_root="../../"
+  class="scroll-smooth [--header-height:calc(var(--spacing)*18)] [--header-padding:calc(var(--spacing)*12)]"
+  id="top"
+  
+>
+  <head>
+    <title>Cython - an overview &mdash; Cython 3.3.0a0 documentation</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="generator"
+  content="Sphinx 9.1.0, Clarity Theme for Sphinx 2.1.0 (https://readcraft.io/sphinx-clarity-theme/)"
+/>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<script src="../../_static/scripts/dark-mode.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../../_static/pygments_dark.css?v=a5519fdd" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/output.css?v=f62a8d1b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/extensions/sphinx-tabs.css?v=02bded6a" />
+
+
+  <link rel="icon" href="../../_static/favicon.ico" />
+
+    
+    
+  <script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="cython" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/src/quickstart/overview.html" /><meta name="readthedocs-http-status" content="200" /></head>
+
+  <body >
+    
+  <!-- ============================================================== -->
+  <!-- Primary drawer before markup -->
+  <!-- ============================================================== -->
+  <div class="drawer">
+    <input id="primary-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- ========================================================== -->
+      <!-- Secondary drawer before markup -->
+      <!-- ========================================================== -->
+      <div class="drawer drawer-end">
+        <input id="secondary-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+          <!-- ====================================================== -->
+          <!-- Page content -->
+          <!-- ====================================================== -->
+          <div class="bg-base-100 divide-base-200 divide-y">
+            
+<!-- Header -->
+<header id="main-header" class="bg-base-100 sticky top-0 z-50">
+  <!-- Announcement banner -->
+
+  <div class="announcement">
+    <div class="bg-base-200/25 text-base-content border-base-200 border-b">
+      <div
+        class="container mx-auto flex items-center justify-between gap-4 px-4 py-2 text-sm"
+      >
+        <div class="flex flex-1 items-center justify-center gap-2">
+          <div class="announcement__content prose prose-sm max-w-none">You are viewing the development version. See this page in latest <a href='/en/stable/src/quickstart/overview.html'>stable version</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- .Announcement banner -->
+
+  <div
+    class="container mx-auto flex h-[var(--header-height)] items-center px-4 md:px-0"
+  >
+    <!-- Left side -->
+    <div class="min-w-0 flex-1">
+      <div class="flex items-center gap-1 overflow-hidden md:gap-4">
+        <div class="min-w-0">
+<a
+  href="../../index.html"
+  class="header-branding flex items-center gap-4"
+>
+  
+  
+    
+    
+    
+    <img
+      src="../../_static/cythonlogo.png"
+      class="header-branding__logo h-8 dark:hidden"
+      alt="Logo of Cython"
+    />
+    <img
+      src="../../_static/cython-logo-light.png"
+      class="header-branding__logo h-8  hidden dark:block"
+      alt="Logo of Cython"
+    />
+  
+
+  
+    <span
+      class="header-branding__title text-primary-content font-heading hidden overflow-hidden text-2xl font-normal whitespace-nowrap md:inline"
+    >
+      
+        Cython Documentation
+      
+    </span>
+  
+</a></div>
+        <div class="flex-shrink-0">
+          <!-- #Version select -->
+
+<!-- .#Version select -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Right side -->
+    <div class="flex min-w-0 flex-1 items-center justify-end">
+      
+        <!-- #Header menu (desktop) -->
+        <div class="header-menu header-menu--desktop">
+          <div class="hidden lg:block">
+            
+            
+            <ul
+              class="menu menu-horizontal gap-2 text-[var(--btn-fg)] [&_li]:self-center [&_li>a]:px-2 [&_li>a]:py-3"
+            >
+              
+    <li>
+      
+      <div class="tooltip tooltip-bottom" data-tip="Like the tool? Help make it better">
+      
+      
+        <a
+          href="../donating.html"
+          class="flex items-center gap-1 "
+          
+        ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Donate
+        </a>
+      </div>
+    </li>
+            </ul>
+          </div>
+        </div>
+      
+      <!-- .#Header menu (desktop) -->
+
+      <!-- #Search button -->
+      <div class="tooltip tooltip-bottom" data-tip="Search">
+        <button
+          class="btn btn-ghost btn-secondary"
+          onclick="searchModal.showModal()"
+        >
+          <span class="icon-[prime--search] text-2xl"></span>
+        </button>
+      </div>
+      <!-- .#Search button -->
+
+      
+<!-- #Language select -->
+
+<!-- .#Language select -->
+      
+<!-- #Mode select -->
+<div class="mode-select hidden md:block">
+  <div class="tooltip tooltip-bottom" data-tip="Light/dark mode">
+    <button class="btn btn-ghost btn-secondary">
+      <label class="swap swap-rotate">
+        <!-- this hidden checkbox controls the state -->
+        <input type="checkbox" onclick="toggleMode()" />
+        <!-- light mode icon -->
+        <span class="icon-[prime--sun] swap-on text-2xl"></span>
+        <!-- dark mode icon -->
+        <span class="icon-[prime--moon] swap-off text-2xl"></span>
+      </label>
+    </button>
+  </div>
+</div>
+<!-- .#Mode select -->
+
+      <!-- #Header menu (mobile) -->
+      
+        <div class="header-menu header-menu--mobile">
+          <details class="dropdown dropdown-left lg:hidden">
+            <summary class="btn btn-secondary aspect-square" aria-label="Menu">
+              <span class="icon-[prime--bars]"></span>
+              <span class="sr-only">Menu</span>
+            </summary>
+            <!-- `[&_li>a.btn]:justify-start` - If a content of <li> is the button, it should be aligned to the start (left) -->
+            <ul
+              class="menu dropdown-content bg-base-100 rounded-box dark:border-base-200 z-1 w-52 p-2 shadow-sm dark:border [&_li>a.btn]:justify-start"
+            >
+              
+    <li>
+      
+      <div class="tooltip tooltip-bottom" data-tip="Like the tool? Help make it better">
+      
+      
+        <a
+          href="../donating.html"
+          class="flex items-center gap-1 "
+          
+        ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Donate
+        </a>
+      </div>
+    </li>
+            </ul>
+          </details>
+        </div>
+      
+      <!-- .#Header menu (mobile) -->
+    </div>
+  </div>
+</header>
+            
+<!-- #Sidebar toggles (mobile) -->
+<nav class="p-4 lg:hidden">
+  <div class="container mx-auto flex items-center justify-between text-sm">
+    <!-- Left side -->
+    <div>
+      
+        <button
+          class="btn btn-secondary btn-sm text-secondary-content/80 font-normal"
+        >
+          <label
+            for="primary-drawer"
+            class="flex cursor-pointer items-center gap-1"
+          >
+            <span class="icon-[prime--align-left] text-xl"></span>
+            Table of Contents
+          </label>
+        </button>
+      
+    </div>
+    <!-- .Left side -->
+    <!-- Right side -->
+    <div>
+      
+    </div>
+    <!-- .Right side -->
+  </div>
+</nav>
+<!-- .#Sidebar toggles (mobile) -->
+
+            <main class="p-4 lg:pt-[var(--header-padding)]">
+              <div class="container mx-auto lg:flex lg:items-start">
+                <article class="lg:order-2 lg:w-8/12 lg:flex-none lg:px-12">
+                  
+<!-- #Breadcrumb -->
+<nav class="flex flex-wrap items-center gap-1 text-sm">
+  
+  <a
+    href="../../index.html"
+    class="text-secondary-content/80 hover:text-accent-content hover:underline"
+  >
+    Cython 3.3.0a0 documentation
+  </a>
+
+  
+    <span
+      class="icon-[prime--arrow-right] text-secondary-content/50"
+    ></span>
+    <a
+      class="text-secondary-content/80 hover:text-accent-content hover:underline"
+      href="index.html"
+      >Getting Started</a
+    >
+
+  
+  <span
+    class="icon-[prime--arrow-right] text-secondary-content/50"
+  ></span>
+  <span class="text-secondary-content/80">Cython - an overview</span>
+</nav>
+<!-- .#Breadcrumb -->
+
+                  
+                  <main role="main">
+  <section id="cython-an-overview">
+<h1>Cython - an overview<a class="headerlink" href="#cython-an-overview" title="Link to this heading">#</a></h1>
+<p><a class="reference internal" href="#cython" id="id1"><span>[Cython]</span></a> is a programming language that makes writing C extensions
+for the Python language as easy as Python itself.  It aims to become
+a superset of the <a class="reference internal" href="#python" id="id2"><span>[Python]</span></a> language which gives it high-level,
+object-oriented, functional, and dynamic programming.  Its main feature
+on top of these is support for optional static type declarations as
+part of the language.  The source code gets translated into optimized
+C/C++ code and compiled as Python extension modules.  This allows for
+both very fast program execution and tight integration with external C
+libraries, while keeping up the high programmer productivity for
+which the Python language is well known.</p>
+<p>The primary Python execution environment is commonly referred to as
+CPython, as it is written in C.  Other major implementations use Java
+(Jython <a class="reference internal" href="#jython" id="id3"><span>[Jython]</span></a>), C# (IronPython <a class="reference internal" href="#ironpython" id="id4"><span>[IronPython]</span></a>) and Python itself
+(PyPy <a class="reference internal" href="#pypy" id="id5"><span>[PyPy]</span></a>).  Written in C, CPython has been conducive to wrapping
+many external libraries that interface through the C language.  It
+has, however, remained non trivial to write the necessary glue code in
+C, especially for programmers who are more fluent in a high-level
+language like Python than in a close-to-the-metal language like C.</p>
+<p>Originally based on the well-known Pyrex <a class="reference internal" href="#pyrex" id="id6"><span>[Pyrex]</span></a>, the Cython project
+has approached this problem by means of a source code compiler that
+translates Python code to equivalent C code.  This code is executed
+within the CPython runtime environment, but at the speed of compiled C
+and with the ability to call directly into C libraries.
+At the same time, it keeps the original interface of the Python
+source code, which makes it directly usable from Python code.  These
+two-fold characteristics enable Cython’s two major use cases:
+extending the CPython interpreter with fast binary modules, and
+interfacing Python code with external C libraries.</p>
+<p>While Cython can compile (most) regular Python code, the generated C
+code usually gains major (and sometime impressive) speed improvements
+from optional static type declarations for both Python and C types.
+These allow Cython to assign C semantics to parts of the code, and to
+translate them into very efficient C code.  Type declarations can
+therefore be used for two purposes: for moving code sections from
+dynamic Python semantics into static-and-fast C semantics, but also
+for directly manipulating types defined in external libraries.  Cython
+thus merges the two worlds into a very broadly applicable programming
+language.</p>
+<div role="list" class="citation-list">
+<div class="citation" id="cython" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Cython</a><span class="fn-bracket">]</span></span>
+<p>G. Ewing, R. W. Bradshaw, S. Behnel, D. S. Seljebotn et al.,
+The Cython compiler, <a class="reference external" href="https://cython.org/">https://cython.org/</a>.</p>
+</div>
+<div class="citation" id="ironpython" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">IronPython</a><span class="fn-bracket">]</span></span>
+<p>Jim Hugunin et al., <a class="reference external" href="https://archive.codeplex.com/?p=IronPython">https://archive.codeplex.com/?p=IronPython</a>.</p>
+</div>
+<div class="citation" id="jython" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Jython</a><span class="fn-bracket">]</span></span>
+<p>J. Huginin, B. Warsaw, F. Bock, et al.,
+Jython: Python for the Java platform, <a class="reference external" href="https://www.jython.org">https://www.jython.org</a>.</p>
+</div>
+<div class="citation" id="pypy" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">PyPy</a><span class="fn-bracket">]</span></span>
+<p>The PyPy Group, PyPy: a Python implementation written in Python,
+<a class="reference external" href="https://pypy.org/">https://pypy.org/</a>.</p>
+</div>
+<div class="citation" id="pyrex" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Pyrex</a><span class="fn-bracket">]</span></span>
+<p>G. Ewing, Pyrex: C-Extensions for Python,
+<a class="reference external" href="https://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/">https://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/</a></p>
+</div>
+<div class="citation" id="python" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Python</a><span class="fn-bracket">]</span></span>
+<p>G. van Rossum et al., The Python programming language,
+<a class="reference external" href="https://www.python.org/">https://www.python.org/</a>.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+                  
+<!-- #Article navigation -->
+<nav class="clear-both py-8">
+  <ul class="text-secondary-content flex justify-between gap-4">
+    <li class="flex flex-col gap-1">
+      
+        <span class="flex items-center text-xs font-light">
+          <span class="icon-[prime--angle-left]"></span>
+          Previous
+        </span>
+        <a
+          class="hover:text-accent-content pl-1 text-sm underline"
+          href="index.html"
+          title="Previous article"
+          >Getting Started</a
+        >
+      
+    </li>
+    <li class="flex flex-col gap-1 lg:items-end">
+      
+        <span class="flex items-center text-xs font-light">
+          Next
+          <span class="icon-[prime--angle-right]"></span>
+        </span>
+        <a
+          class="hover:text-accent-content pr-1 text-sm underline"
+          href="install.html"
+          title="Next article"
+          >Installing Cython</a
+        >
+      
+    </li>
+  </ul>
+</nav>
+<!-- .#Article navigation -->
+                  
+<!-- #Article footer -->
+<footer
+  class="article-footer border-base-200 text-secondary-content/80 my-4 border-t pt-8 text-sm"
+>
+  <div class="flex flex-col justify-between gap-4 lg:flex-row">
+    <div class="article-footer__left">
+      
+      
+    </div>
+    <div class="article-footer__right flex items-center gap-2">
+      
+        
+        
+<a
+    href="https://github.com/cython/cython/edit/master/docs/src/quickstart/overview.rst"
+    rel="nofollow"
+    class="edit-page-source"
+    >Edit on GitHub</a
+  >
+
+      
+    </div>
+  </div>
+</footer>
+<!-- .#Article footer -->
+                </article>
+
+                <!-- #Primary drawer (desktop) -->
+                <nav
+                  class="lg:sticky lg:top-[calc(var(--header-height)+var(--announcement-height,0px)+var(--header-padding))] lg:h-[calc(100vh-var(--header-height)-var(--announcement-height,0px)-calc(var(--header-padding)*2))] lg:overflow-y-auto scrollbar-overlay hidden lg:order-1 lg:block lg:w-2/12 lg:flex-none"
+                >
+                  
+<div class="global-toc">
+  <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cython - an overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Cython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building Cython code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cythonize.html">Faster code via static typing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">Cython Changelog</a></li>
+</ul>
+
+</div>
+                </nav>
+                <!-- .#Primary drawer (desktop) -->
+
+                <!-- #Secondary drawer (desktop) -->
+                <aside
+                  class="lg:sticky lg:top-[calc(var(--header-height)+var(--announcement-height,0px)+var(--header-padding))] lg:h-[calc(100vh-var(--header-height)-var(--announcement-height,0px)-calc(var(--header-padding)*2))] lg:overflow-y-auto scrollbar-overlay hidden lg:order-3 lg:block lg:w-2/12 lg:flex-none"
+                >
+                  
+
+                </aside>
+                <!-- .#Secondary drawer (desktop) -->
+              </div>
+            </main>
+
+            
+<footer class="p-4">
+  <div
+    class="text-secondary-content container mx-auto flex h-8 items-center justify-center text-center text-sm"
+  >
+    <div>
+        Copyright &copy;
+        2026, Stefan Behnel, Robert Bradshaw, Dag Sverre Seljebotn, Greg Ewing, William Stein, Gabriel Gellner, et al.
+      <br class="lg:hidden" />
+      Made with
+      <a
+        href="https://www.sphinx-doc.org"
+        class="hover:text-accent-content underline"
+        >Sphinx</a
+      >
+      and
+      <a
+        href="https://readcraft.io/sphinx-clarity-theme/?utm_source=sphinx_clarity_theme"
+        class="hover:text-accent-content underline"
+        >Clarity Theme for Sphinx </a
+      >.
+    </div>
+  </div>
+</footer>
+          </div>
+
+          
+<!-- #Scroll to top -->
+<div id="scroll-to-top" class="toast toast-end">
+  <a
+    class="btn btn-secondary btn-sm"
+    href="#top"
+    aria-label="Scroll to top"
+  >
+    Back to top
+    <span class="icon-[prime--arrow-up] text-base"></span>
+  </a>
+</div>
+<!-- .#Scroll to top -->
+          
+<!-- #Search dialog -->
+<dialog id="searchModal" class="modal">
+  <div class="modal-box absolute top-8 lg:top-16">
+    <search>
+      <form action="../../search.html" method="get">
+        <label class="input input-xl w-full">
+          <span class="icon-[prime--search] text-4xl"></span>
+          <input
+            type="search"
+            class="grow"
+            placeholder="Search the docs"
+            name="q"
+            placeholder="Search the documentation"
+            aria-label="Search the documentation"
+          />
+          <kbd class="kbd kbd-lg p-4">Enter</kbd>
+        </label>
+      </form>
+    </search>
+    <p class="mt-4 text-sm">
+      Press <kbd class="kbd">Enter</kbd> to search. Press
+      <kbd class="kbd">Esc</kbd> or click outside to close.
+    </p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+<!-- .#Search dialog -->
+
+          <!-- ====================================================== -->
+          <!-- .Page content -->
+          <!-- ====================================================== -->
+
+          <!-- ====================================================== -->
+          <!-- Secondary drawer after markup -->
+          <!-- ====================================================== -->
+        </div>
+        <div class="drawer-side">
+          <label
+            for="secondary-drawer"
+            class="drawer-overlay"
+            aria-label="Close secondary sidebar"
+          ></label>
+          
+          <div
+            class="bg-base-100 text-base-content mt-[calc(var(--header-height)+var(--announcement-height,0px))] min-h-full w-80 overflow-y-auto p-4"
+          >
+            <!-- ==================================================== -->
+            <!-- Secondary drawer (mobile) content -->
+            <!-- ==================================================== -->
+            <div class="text-xs">
+</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- Primary drawer after markup -->
+      <!-- ========================================================== -->
+    </div>
+
+    <div class="drawer-side">
+      <label
+        for="primary-drawer"
+        aria-label="Close primary sidebar"
+        class="drawer-overlay"
+      ></label>
+      
+      <div
+        class="bg-base-100 text-base-content mt-[calc(var(--header-height)+var(--announcement-height,0px))] min-h-full w-80 overflow-y-auto p-4"
+      >
+        <!-- ===================================================== -->
+        <!-- Primary drawer (mobile) content -->
+        <!-- ===================================================== -->
+        <div class="text-xs">
+<div class="global-toc">
+  <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cython - an overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing Cython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Building Cython code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cythonize.html">Faster code via static typing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/index.html">Users Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userguide/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes.html">Cython Changelog</a></li>
+</ul>
+
+</div></div>
+      </div>
+    </div>
+  </div>
+
+
+    
+    <script
+  defer
+  src="../../_static/scripts/scroll-to-top.js"
+></script>
+
+<script>
+  window.ScrollspyConfig = {
+    rootMargin: "-120px 0px -60% 0px",
+  };
+</script>
+<script defer src="../../_static/scripts/scrollspy.js"></script>
+
+
+
+
+  <script
+    defer
+    src="../../_static/scripts/announcement.js"
+  ></script>
+
+  <script src="../../_static/documentation_options.js?v=04df95a8"></script>
+  <script src="../../_static/doctools.js?v=c73fddf3"></script>
+  <script src="../../_static/sphinx_highlight.js?v=36527ec2"></script>
+    </body>
+</html>
